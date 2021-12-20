@@ -9,7 +9,7 @@
 # can be overridden by project or group variables as needed.
 variables:
   # these containers are built manually using the rippled
-  # cmake build (container targets) and tagged/pushed so they 
+  # cmake build (container targets) and tagged/pushed so they
   # can be used here
   RPM_CONTAINER_TAG: "2020-02-10"
   RPM_CONTAINER_NAME: "rippled-rpm-builder"
@@ -58,7 +58,7 @@ stages:
 .only_primary_template: &only_primary
   only:
     refs:
-      - /^(master|release|develop)$/
+      - /^(master|release|develop|xls20)$/
     variables:
       - $IS_PRIMARY_REPO == "true"
 
@@ -622,5 +622,3 @@ build_ubuntu_container:
   script:
     - . ./Builds/containers/gitlab-ci/build_container.sh dpkg
   allow_failure: true
-
-

@@ -9,8 +9,10 @@ case ${CI_COMMIT_REF_NAME} in
     master)
         export COMPONENT="stable"
         ;;
+    xls20)
+        export COMPONENT="xls20"
+        ;;
     *)
         export COMPONENT="_unknown_"
         ;;
 esac
-
